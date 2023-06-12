@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+{{!-- {{> customerHeader}} --}}
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="row">
+                <aside class="col-sm-5 border-right">
+                    <article class="gallery-wrap">
+                        <div class="img-big-wrap">
+                            <div> <a href="#"><img src="../{{bookDetail.img}}" width="100%" height="100%"></a></div>
+                        </div> <!-- slider-product.// -->
+                        {{!-- <div class="img-small-wrap">
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                        </div> <!-- slider-nav.// --> --}}
+                    </article> <!-- gallery-wrap .end// -->
+                </aside>
+                <aside class="col-sm-7">
+                    <div class="card-body p-5">
+                        <h3 class="title mb-3">{{bookDetail.name}}</h3>
+
+                        <p class="price-detail-wrap">
+                            <span class="price h3 text-warning">
+                                <span class="num">{{bookDetail.price}}VNĐ</span>
+                            </span>
+                        </p> <!-- price-detail-wrap .// -->
+                        <dl class="item-property">
+                            <dt>Description</dt>
+                            <dd>
+                                <p>{{bookDetail.description}}</p>
+                            </dd>
+                        </dl>
+                        <dl class="param param-feature">
+                            <dt>Quantity</dt>
+                            <dd>{{bookDetail.quantity}}</dd>
+                        </dl> <!-- item-property-hor .// -->
+
+                        <hr>
+                        <form action="/customer/doAddToCart" method="post">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <dl class="param param-inline">
+                                        <dt>Quantity: </dt>
+                                        <dd>
+                                            <select name="quantity" class="form-control form-control-sm"
+                                                style="width:70px;">
+                                                <option value=1> 1 </option>
+                                                <option value=2> 2 </option>
+                                                <option value=3> 3 </option>
+                                            </select>
+                                        </dd>
+                                    </dl> <!-- item-property .// -->
+                                </div> <!-- col.// -->
+                            </div> <!-- row.// -->
+                            <hr>
+                            {{#if addErrors}}
+                                <span class="form-message badge bg-danger">{{addErrors}}</span>
+                            {{/if}}
+                            <input type="hidden" name="id" value={{bookDetail._id}}> </input>
+                            <a href="/customer" class="btn btn-lg btn-primary text-uppercase"> Continue Shopping</a>
+                            <input type="submit" value="Add to cart"
+                                class="btn btn-lg btn-outline-primary text-uppercase"> </input>
+                        </form>
+                    </div>
+                    </article> <!-- card-body.// -->
+                </aside> <!-- col.// -->
+            </div> <!-- row.// -->
+        </div> <!-- card.// -->
+    </div>
+
+</body>
+
+</html>

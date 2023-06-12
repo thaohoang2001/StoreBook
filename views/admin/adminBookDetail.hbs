@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Card Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+{{!-- {{> customerHeader}} --}}
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="row">
+                <aside class="col-sm-5 border-right">
+                    <article class="gallery-wrap">
+                        <div class="img-big-wrap">
+                            <div> <a href="#"><img src="../{{bookDetail.img}}" width="100%" height="100%"></a></div>
+                        </div> <!-- slider-product.// -->
+                        {{!-- <div class="img-small-wrap">
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                            <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+                        </div> <!-- slider-nav.// --> --}}
+                    </article> <!-- gallery-wrap .end// -->
+                </aside>
+                <aside class="col-sm-7">
+                    <div class="card-body p-5">
+                        <h3 class="title mb-3">{{bookDetail.name}}</h3>
+
+                        <p class="price-detail-wrap">
+                            <span class="price h3 text-warning">
+                                <span class="num">{{bookDetail.price}}VNĐ</span>
+                            </span>
+                        </p> <!-- price-detail-wrap .// -->
+                        <dl class="item-property">
+                            <dt>Description</dt>
+                            <dd>
+                                <p>{{bookDetail.description}}</p>
+                            </dd>
+                        </dl>
+                        <dl class="param param-feature">
+                            <dt>Quantity</dt>
+                            <dd>{{bookDetail.quantity}}</dd>
+                        </dl> <!-- item-property-hor .// -->
+
+                        <hr>
+                        <form action="/admin/doAddBook" method="post">
+                            <td class="text-center align-middle">
+                                <div class="btn-group align-top">
+                                    <a href="/admin/adminAddBook?id={{bookDetail.id}}" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-add"></span>
+                                        <span><strong>Add</strong></span>
+                                    </a>
+                                </div>
+                        </form>
+
+                        <form action="/admin/doEditBook" method="post">
+                            <div class="btn-group align-top">
+                                <a href="/admin/adminEditBook?id={{bookDetail.id}}" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                    <span><strong>Edit</strong></span>
+                                </a>
+                            </div>
+                        </form>
+
+                        <form action="/admin/doDeleteBook" method="post">
+                            <div class="btn-group align-top">
+                                <a href="/admin/doDeleteBook?id={{bookDetail.id}}"
+                                    onclick="return confirm('Are you sure to delete this book?')"
+                                    class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                    <span><strong>Delete</strong></span>
+                                </a>
+                            </div>
+                        </form>
+
+                        <div class="btn-group align-top">
+                            <a href="/admin" class="btn btn-info">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                <span><strong>BackHome</strong></span>
+                            </a>
+                        </div>
+
+                        </td>
+                    </div>
+                    </article> <!-- card-body.// -->
+                </aside> <!-- col.// -->
+            </div> <!-- row.// -->
+        </div> <!-- card.// -->
+    </div>
+
+</body>
+
+</html>

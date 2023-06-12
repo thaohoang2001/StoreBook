@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Welcom to FPTBook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+  <!-- Css -->
+  <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+
+</head>
+
+{{> adminHeader}}
+
+<body>
+
+  <!-- MODAL Start
+    	================================================== -->
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body clearfix">
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  </section> <!-- End of /Section -->
+
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="block">
+    <ul class="nav navbar-nav nav-main">
+      <li><a href="admin/adminViewCustomer">Manager Account</a></li>
+    </ul> <!-- End of /.nav-main -->
+    </div>
+  </div>
+
+  <!-- FEATURES Start
+    ================================================== -->
+
+  <section id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="block">
+            <div class="media">
+              <div class="pull-left" href="#">
+                <i class="fa fa-ambulance"></i>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Group4 Heal</h4>
+                <p>Group 4 welcome to every one to Shop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="block">
+            <div class="media">
+              <div class="pull-left" href="#">
+                <i class=" fa fa-foursquare"></i>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Media Group 4</h4>
+                <p>Buy book or shopping</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="block">
+            <div class="media">
+              <div class="pull-left" href="#">
+                <i class=" fa fa-phone"></i>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Call Us</h4>
+                <p>Don't contact with my group</p>
+              </div> <!-- End of /.media-body -->
+            </div> <!-- End of /.media -->
+          </div> <!-- End of /.block -->
+        </div> <!-- End of /.col-md-4 -->
+      </div> <!-- End of /.row -->
+    </div> <!-- End of /.container -->
+  </section> <!-- End of section -->
+
+
+
+  <!-- CATAGORIE Start
+    ================================================== -->
+
+  <section id="catagorie">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <div class="block-heading">
+              <h2>Manager Book</h2>
+            </div>
+
+            <div class="row">
+            {{#each listBook}}
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <a class="catagotie-head" href="/admin/adminBookDetail?id={{id}}">
+                    <img src="../{{img}}" alt="...">
+                    <h3>{{name}}</h3>
+                  </a>
+                  <div class="caption">
+                    <p>{{description}}</p>
+                  </div> <!-- End of /.caption -->
+                </div> <!-- End of /.thumbnail -->
+              </div> <!-- End of /.col-sm-6 col-md-4 -->
+              {{/each}}
+            </div> <!-- End of /.row -->
+            
+          </div> <!-- End of /.block -->
+        </div> <!-- End of /.col-md-12 -->
+      </div> <!-- End of /.row -->
+    </div> <!-- End of /.container -->
+  </section> <!-- End of Section -->
+
+
+
+
+  <!-- FOOTER Start
+    ================================================== -->
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="block clearfix">
+            <p>
+              Welcome to the Group 4, FptBook Shop bring very new of book. Every book anime of Shin and public by Group
+              4 with my team
+            </p>
+            <h4 class="connect-heading">CONNECT WITH US</h4>
+            <ul class="social-icon">
+              <li>
+                <a class="facebook-icon" href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a class="plus-icon" href="#">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </li>
+              <li>
+                <a class="twitter-icon" href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a class="pinterest-icon" href="#">
+                  <i class="fa fa-pinterest"></i>
+                </a>
+              </li>
+              <li>
+                <a class="linkedin-icon" href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul> <!-- End Of /.social-icon -->
+          </div> <!-- End Of /.block -->
+        </div> <!-- End Of /.Col-md-4 -->
+        <div class="col-md-4">
+          <div class="block">
+            <h4>GET IN TOUCH</h4>
+            <p><i class="fa  fa-map-marker"></i> <span>Group 4</span> Greenwich Vietnam, Ha Noi</p>
+            <p> <i class="fa  fa-phone"></i> <span>Phone:</span> 123456789 </p>
+
+            <p> <i class="fa  fa-mobile"></i> <span>Mobile:</span> 123456789 </p>
+
+            <p class="mail"><i class="fa  fa-envelope"></i>Eamil: <span>group4@gmail.com</span></p>
+          </div> <!-- End Of /.block -->
+        </div> <!-- End Of Col-md-3 -->
+        <div class="col-md-4">
+          <div class="block">
+            <h4>UPCOMING ITEMS</h4>
+            <div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine1.jpg" alt="...">
+              </a>
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine2.jpg" alt="...">
+              </a>
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine3.jpg" alt="...">
+              </a>
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine4.jpg" alt="...">
+              </a>
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine5.jpg" alt="...">
+              </a>
+              <a class="pull-left" href="#">
+                <img class="media-object" src="images/shine6.jpg" alt="...">
+              </a>
+            </div> <!-- End Of /.media -->
+          </div> <!-- End Of /.block -->
+        </div> <!-- End Of Col-md-3 -->
+      </div> <!-- End Of /.row -->
+    </div> <!-- End Of /.Container -->
+
+
+
+    <!-- FOOTER-BOTTOM Start
+    ================================================== -->
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="copyright-text pull-right">Group 4 @2022 Designed by Greenwich VietNam<a
+                href="http://www.facebook.com">Facebook</a> All Rights Reserved</p>
+          </div> <!-- End Of /.col-md-12 -->
+        </div> <!-- End Of /.row -->
+      </div> <!-- End Of /.container -->
+    </div> <!-- End Of /.footer-bottom -->
+  </footer> <!-- End Of Footer -->
+
+  <a id="back-top" href="#"></a>
+</body>
+
+</html>
