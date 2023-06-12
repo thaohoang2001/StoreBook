@@ -6,7 +6,9 @@ const book = require('./models/book');
 session = require('express-session')
 const path = require("path");
 var hbs = require('hbs');
+const dotenv = require('dotenv');
 
+dotenv.config()
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -32,6 +34,24 @@ app.get('/',  async (req,res)=>{
 
 
 
+//Connect to db
+const connect = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO)
+        console.log("Connected to mongodb")
+    } catch (err) {
+        throw err;
+    }
+};
+
+mongoose.connection.on("Disconnected", () => {
+    console.log("mongoDB disconnected!")
+})
+mongoose.connection.on("connected", () => {
+    console.log("mongoDB connected!")
+})
+
+
 const authRoute = require("./routes/auth")
 app.use(authRoute)
 
@@ -43,5 +63,5 @@ app.use('/', adminRoute)
 
 
 const PORT = process.env.PORT || 5000
-app.listen(PORT)
+app.listen(PORT, connect())
 console.log("Server is running! " + PORT)
